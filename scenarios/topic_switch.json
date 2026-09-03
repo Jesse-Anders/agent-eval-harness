@@ -1,0 +1,15 @@
+{
+  "name": "topic_switch",
+  "description": "The adversarial case: a 'thanks, that's sorted' followed by a NEW issue. The cheap filter reads it as a close (false positive); the reviewer catches the topic switch and keeps the session open.",
+  "turns": [
+    {"user": "My login on Meridian Sync keeps failing.", "expect": {"disposition": "advance"}},
+    {"user": "I click login, type my password, and it just spins forever.", "expect": {"disposition": "advance"}},
+    {"user": "Oh that's sorted now, thanks! Wait - actually the CSV export is also broken.", "expect": {"disposition": "continue"}},
+    {"user": "When I export, it just downloads an empty file.", "expect": {"disposition": "continue"}}
+  ],
+  "expected": {
+    "final_disposition": "continue",
+    "final_step": "gather_environment",
+    "final_turn": 4
+  }
+}

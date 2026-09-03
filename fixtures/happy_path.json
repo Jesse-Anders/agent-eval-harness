@@ -1,0 +1,22 @@
+{
+  "name": "happy_path",
+  "responses": {
+    "talker": [
+      "Sorry to hear that! Which product is it, and what happens exactly?",
+      "Got it. What operating system and app version are you on?",
+      "Thanks. Try clearing the local cache from Settings > Advanced, then relaunch.",
+      "Great to hear it's working. Anything else I can help with?",
+      "You're very welcome - take care!"
+    ],
+    "step_evaluator": [
+      "{\"disposition\": \"advance\", \"extracted_facts\": {\"product\": \"Sync\"}, \"reason\": \"product identified\"}",
+      "{\"disposition\": \"advance\", \"extracted_facts\": {\"repro_steps\": \"click Export\"}, \"reason\": \"reproduction captured\"}",
+      "{\"disposition\": \"advance\", \"extracted_facts\": {\"os\": \"macOS\", \"app_version\": \"3.2\"}, \"reason\": \"environment captured\"}",
+      "{\"disposition\": \"advance\", \"extracted_facts\": {}, \"reason\": \"resolution proposed and accepted\"}",
+      "{\"disposition\": \"closed\", \"extracted_facts\": {}, \"reason\": \"customer confirms done\"}"
+    ],
+    "reviewer": [
+      "{\"disposition\": \"closed\", \"reason\": \"customer explicitly finished and thanked us off\"}"
+    ]
+  }
+}

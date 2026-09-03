@@ -1,0 +1,17 @@
+{
+  "name": "hold_missing_env",
+  "responses": {
+    "talker": [
+      "Happy to help! Which product is this about?",
+      "Thanks. Can you tell me exactly what happens and how to trigger it?",
+      "No worries - is there a specific action that seems to set it off?",
+      "Perfect, that's a clear repro. What OS and version are you running?"
+    ],
+    "step_evaluator": [
+      "{\"disposition\": \"continue\", \"extracted_facts\": {}, \"reason\": \"product not yet identified\"}",
+      "{\"disposition\": \"advance\", \"extracted_facts\": {\"product\": \"Sync\"}, \"reason\": \"product identified\"}",
+      "{\"disposition\": \"continue\", \"extracted_facts\": {}, \"reason\": \"reproduction still vague\"}",
+      "{\"disposition\": \"advance\", \"extracted_facts\": {\"repro_steps\": \"click Export\"}, \"reason\": \"clear reproduction\"}"
+    ]
+  }
+}

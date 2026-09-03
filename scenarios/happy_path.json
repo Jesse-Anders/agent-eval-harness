@@ -1,0 +1,17 @@
+{
+  "name": "happy_path",
+  "description": "A clean intake that advances through every step and closes normally.",
+  "turns": [
+    {"user": "My Meridian Sync app keeps crashing on launch.", "expect": {"disposition": "advance"}},
+    {"user": "Sure - it crashes every time I click the Export button.", "expect": {"disposition": "advance"}},
+    {"user": "I'm on macOS, app version 3.2.", "expect": {"disposition": "advance"}},
+    {"user": "Okay, I cleared the cache like you suggested and it launches fine now.", "expect": {"disposition": "advance"}},
+    {"user": "That's everything I needed. Thanks so much!", "expect": {"disposition": "closed"}}
+  ],
+  "expected": {
+    "final_disposition": "closed",
+    "final_step": "resolved",
+    "final_turn": 5,
+    "expected_facts": {"product": "Sync", "os": "macOS", "app_version": "3.2"}
+  }
+}

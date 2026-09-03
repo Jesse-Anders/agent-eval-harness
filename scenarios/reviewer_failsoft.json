@@ -1,0 +1,13 @@
+{
+  "name": "reviewer_failsoft",
+  "description": "The reviewer returns malformed output on a proposed close. Rather than trust the cheap filter's close, the system softens it to paused - park, don't commit to the irreversible end state.",
+  "turns": [
+    {"user": "It's the Sync app - it won't start at all.", "expect": {"disposition": "advance"}},
+    {"user": "Ugh, you know what, just close this out. I'm done dealing with it today.", "expect": {"disposition": "paused"}}
+  ],
+  "expected": {
+    "final_disposition": "paused",
+    "final_step": "reproduce_issue",
+    "final_turn": 2
+  }
+}

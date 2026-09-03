@@ -1,0 +1,36 @@
+{
+  "name": "topic_switch",
+  "responses_by_version": {
+    "v1": {
+      "talker": [
+        "Sorry about that! Let's dig in. Can you walk me through what happens when you log in?",
+        "Thanks. What OS and browser are you using?",
+        "Glad the login is sorted! Let's look at the export - what happens when you run it?",
+        "Got it. Which format and how large is the file you're exporting?"
+      ],
+      "step_evaluator": [
+        "{\"disposition\": \"advance\", \"extracted_facts\": {\"product\": \"Sync\"}, \"reason\": \"product identified\"}",
+        "{\"disposition\": \"advance\", \"extracted_facts\": {\"repro_steps\": \"login spins forever\"}, \"reason\": \"reproduction captured\"}",
+        "{\"disposition\": \"closed\", \"extracted_facts\": {}, \"reason\": \"customer said it's sorted and thanked us\"}",
+        "{\"disposition\": \"continue\", \"extracted_facts\": {\"feature\": \"export\"}, \"reason\": \"working the export issue\"}"
+      ],
+      "reviewer": [
+        "{\"disposition\": \"continue\", \"reason\": \"they resolved login but immediately raised a new export issue - not a leave\"}"
+      ]
+    },
+    "v2": {
+      "talker": [
+        "Sorry about that! Let's dig in. Can you walk me through what happens when you log in?",
+        "Thanks. What OS and browser are you using?",
+        "Glad the login is sorted! Let's look at the export - what happens when you run it?",
+        "Got it. Which format and how large is the file you're exporting?"
+      ],
+      "step_evaluator": [
+        "{\"disposition\": \"advance\", \"extracted_facts\": {\"product\": \"Sync\"}, \"reason\": \"product identified\"}",
+        "{\"disposition\": \"advance\", \"extracted_facts\": {\"repro_steps\": \"login spins forever\"}, \"reason\": \"reproduction captured\"}",
+        "{\"disposition\": \"continue\", \"extracted_facts\": {\"feature\": \"export\"}, \"reason\": \"one topic resolved but a new issue was raised - session continues\"}",
+        "{\"disposition\": \"continue\", \"extracted_facts\": {\"feature\": \"export\"}, \"reason\": \"working the export issue\"}"
+      ]
+    }
+  }
+}

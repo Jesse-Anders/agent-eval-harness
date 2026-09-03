@@ -1,0 +1,14 @@
+{
+  "name": "fact_alignment",
+  "description": "Exercises fact extraction against expected facts, with distractors the model should not over-credit.",
+  "turns": [
+    {"user": "I use Meridian Sync on macOS Sonoma, version 3.4, in Chrome. I used to use a competitor called Nimbus.", "expect": {"disposition": "advance"}},
+    {"user": "The dashboard won't load after the latest update.", "expect": {"disposition": "continue"}}
+  ],
+  "expected": {
+    "final_disposition": "continue",
+    "final_step": "reproduce_issue",
+    "final_turn": 2,
+    "expected_facts": {"product": "Sync", "os": "macOS Sonoma", "app_version": "3.4", "browser": "Chrome"}
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "name": "hold_missing_env",
+  "description": "The filter correctly HOLDS (continue) on under-specified turns instead of advancing.",
+  "turns": [
+    {"user": "Hi, I'm having a problem with your software.", "expect": {"disposition": "continue"}},
+    {"user": "Oh - it's the Sync product.", "expect": {"disposition": "advance"}},
+    {"user": "It just crashes sometimes, hard to say when.", "expect": {"disposition": "continue"}},
+    {"user": "Actually it crashes every single time I click Export.", "expect": {"disposition": "advance"}}
+  ],
+  "expected": {
+    "final_disposition": "advance",
+    "final_step": "gather_environment",
+    "final_turn": 4,
+    "expected_facts": {"product": "Sync", "repro_steps": "click Export"}
+  }
+}

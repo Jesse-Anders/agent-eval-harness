@@ -1,0 +1,13 @@
+{
+  "name": "fact_alignment",
+  "responses": {
+    "talker": [
+      "Thanks for the detail! What issue are you running into?",
+      "Got it - let's reproduce it. Does it fail on every load or only sometimes?"
+    ],
+    "step_evaluator": [
+      "{\"disposition\": \"advance\", \"extracted_facts\": {\"product\": \"Sync\", \"os\": \"macOS Sonoma\", \"app_version\": \"3.4\", \"browser\": \"Chrome\", \"prior_tool\": \"Nimbus\"}, \"reason\": \"rich environment stated\"}",
+      "{\"disposition\": \"continue\", \"extracted_facts\": {\"symptom\": \"dashboard won't load\"}, \"reason\": \"gathering reproduction\"}"
+    ]
+  }
+}

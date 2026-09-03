@@ -1,0 +1,16 @@
+{
+  "name": "reviewer_failsoft",
+  "responses": {
+    "talker": [
+      "Sorry it won't start. What OS and version are you on so we can dig in?",
+      "Understood - I'll leave this here for now. We can pick it right back up whenever you're ready."
+    ],
+    "step_evaluator": [
+      "{\"disposition\": \"advance\", \"extracted_facts\": {\"product\": \"Sync\"}, \"reason\": \"product identified\"}",
+      "{\"disposition\": \"closed\", \"extracted_facts\": {}, \"reason\": \"customer asked to close it out\"}"
+    ],
+    "reviewer": [
+      "The customer is clearly frustrated and finished for today - no more questions needed."
+    ]
+  }
+}

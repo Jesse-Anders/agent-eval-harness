@@ -45,10 +45,21 @@ class FakeLLM:
         self.calls: list[dict] = []
 
     @classmethod
-    def from_fixture(cls, path: str | Path) -> FakeLLM:
+    def from_fixture(cls, path: str | Path, *, version: str | None = None) -> FakeLLM:
+        """Load scripted responses. If the fixture has ``responses_by_version`` and a
+        ``version`` is given, use that version's recording; otherwise fall back to the
+        plain ``responses`` block (or any single recorded version)."""
         p = Path(path)
         data = _json.loads(p.read_text(encoding="utf-8"))
-        return cls(data.get("responses") or {}, name=str(data.get("name") or p.stem))
+        by_version = data.get("responses_by_version")
+        responses = None
+        if version and isinstance(by_version, dict):
+            responses = by_version.get(version)
+        if responses is None:
+            responses = data.get("responses")
+        if responses is None and isinstance(by_version, dict):
+            responses = next(iter(by_version.values()), {})
+        return cls(responses or {}, name=str(data.get("name") or p.stem))
 
     @staticmethod
     def _split(entry: Entry) -> tuple[str, str]:
