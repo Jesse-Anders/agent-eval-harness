@@ -1,6 +1,6 @@
 # agent-eval-harness
 
-[![CI](https://github.com/OWNER/agent-eval-harness/actions/workflows/ci.yml/badge.svg)](https://github.com/OWNER/agent-eval-harness/actions/workflows/ci.yml)
+[![CI](https://github.com/Jesse-Anders/agent-eval-harness/actions/workflows/ci.yml/badge.svg)](https://github.com/Jesse-Anders/agent-eval-harness/actions/workflows/ci.yml)
 ![Python](https://img.shields.io/badge/python-3.11%20%7C%203.12-blue)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
@@ -37,7 +37,7 @@ Full write-up, including the asymmetric-error model, in
 ## Quickstart (no API key needed)
 
 ```bash
-git clone https://github.com/OWNER/agent-eval-harness && cd agent-eval-harness
+git clone https://github.com/Jesse-Anders/agent-eval-harness && cd agent-eval-harness
 pip install -e ".[dev]"
 make test                                        # 51 tests, offline, no credentials
 make replay SCENARIO=scenarios/topic_switch.json # replay the adversarial case (fake LLM)
